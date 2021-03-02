@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>popup_studying</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" type="image/png" href="/imgs/book.png" />
+  </head>
+  <body class="popup">
+    <div class="studyingPopupFrame">
+      <div class="timeBox">
+        <div class="cssbrush">
+          <div class="subjectName">{{exDay.subjectName}}</div>
+        </div>
+        <div class="subjectTime">00:00:00</div>
+        <div class="todayStudyTime">study : 00:00:00</div>
+        <div class="todayRestTime">rest : 00:00:00</div>
+      </div>
+      <div class="restOrExit">
+        <button class="rest">휴식</button>
+        <button class="exit" onclick="endStudy()">끝내기</button>
+      </div>
+      <div class="toDoList">
+        <ul></ul>
+      </div>
+    </div>
+    <input type="hidden" id="Oid" value="{{exDay.id}}" />
+    <input type="hidden" id="Oseconds" value="{{exDay.seconds}}" />
+    <input type="hidden" id="OsubjectName" value="{{exDay.subjectName}}" />
+    <input type="hidden" id="Odate" value="{{exDay.date}}" />
+    <input type="hidden" id="OhostName" value="{{exDay.hostName}}" />
+  </body>
+  <script src="/popup_studying.js"></script>
+</html>

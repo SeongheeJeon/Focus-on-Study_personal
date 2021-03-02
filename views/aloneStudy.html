@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alone Study</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/png" href="/imgs/book.png" />
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="navbarLogo">
+            <div class="goBack">
+            <a href="/typeSelection">
+                <!-- ⇦ -->
+                <img src="/imgs/goback.png" class = "goBack btn" alt="뒤로가기버튼">
+            </a>
+            </div>
+            <a href="/" class="navbarLogo">Focus on Study</a>
+        </div>
+        <div class="navbarMenu div">
+            <ul class="navbarMenu">
+                <a href="" class="navbarMenuItem">Mypage</a>
+            <a href="auth_fos/logout" class="navbarMenuItem">Logout</a>
+            </ul>
+        </div>
+    </nav>
+    <div class="study-menu">
+        <ul>
+            <li style="background-image:url('/imgs/todo.png'); background-size: 150px 50px;" data-link="#aloneToDo" class="on"></li>
+            <li style="background-image:url('/imgs/statistics.png'); background-size: 200px 48px;" data-link="#statistics"></li>
+            <li style="background-image:url('/imgs/groupstudy.png'); background-size: 205px 52px;" data-link="#groupStudy"></li>
+        </ul>
+    </div>
+    <div class="pageFrame Study"> 
+        <div class="toDoBox aloneToDoBox" id="aloneToDo">
+            <div class="subjectList">
+            {% for subj in subjects %}    
+                <div class="subjectBox">    
+                    <div class="subjectTitle">
+                        <span class="text">{{subj.name}}</span>
+                        <span class="toggle" onclick="clickToggleEvent(this);
+                            loadToDoEvent(this) " >🔽</span>
+                        <button class="startButton" onclick="startStudy('{{subj.name}}')"></button>
+                        <button class="deleteButton" onclick="deleteSubjectEvent('{{subj.name}}','{{subj.hostName}}')"></button>
+                    </div>
+                    <div class="details">
+                        <form action="" class="formToDo" onsubmit="javascript:submitToDoForm(event)">
+                            <input type="text" class="toDoContent" placeholder="Add Todo">
+                        </form>
+                        <button class="toDoClearBtn" onclick="clearToDoEvent(this)">모두지우기</button>
+                        <ul class="toDoList"></ul>
+                    </div> 
+                </div>
+            {% endfor %}
+                <div class="subjectBox"> 
+                    <div class="subjectTitle">
+                        <form action="/typeSelection/aloneStudy/addSubject" method="post" class="addSubject">
+                            <input class="text" name="name" placeholder="과목명"></input>
+                            <button type="submit" class="subjectAddButton" >추가</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="statisticsBox" id="statistics" style="display:none;">
+            <form action="" class="sendDate">
+              <input type="date" class="inputDate" >
+              <input type="submit" class="submitBtn" value="보기">
+            </form>
+            <div class="typeSelect">
+                <button class="daily" data-link=".chart_daily" style="text-decoration: underline;">일별</button>
+                <button class="weekly" data-link=".chart_weekly">주별</button>
+                <button class="monthly" data-link=".chart_monthly">월별</button>
+            </div>
+            <div class="chart chart_daily">
+                <canvas id="chartCanvas_daily"></canvas>
+                <p class="text">일별차트 test입니다</p>
+            </div>
+            <div class="chart chart_weekly">
+                <canvas id="chartCanvas_weekly"  ></canvas>
+                <p class="text">주별차트 test입니다</p>
+            </div>
+            <div class="chart chart_monthly">
+                <canvas id="chartCanvas_monthly" ></canvas>
+                <p class="text">월별차트 test입니다</p>
+            </div>
+        </div>
+        <div class="groupStudy" id="groupStudy" style="display:none;">
+            <div class="groupMenu">
+                <form name="selectGroupForm" target="showLiveList">    
+                    <select class="selectGroup" onchange="selectGroup(this)">
+                        <option value="default">팀 선택</option>
+                        <option value="1팀">1팀</option>
+                        <option value="2팀">2팀</option>
+                    </select>
+                </form>    
+                <button id="createGroupBtn" onclick="createGroup()" >그룹만들기</button>
+                <button id="findGroup" onclick="findGroup()">그룹검색</button>
+                <button id="inviteBtn" onclick="inviteMember()">멤버초대</button>
+            </div>
+            <iframe id="iframe1" src="#" name="showLiveList" frameborder="0">
+            </iframe>
+            <div class="toDoBox groupToDoBox" id="groupToDo" style="padding: 0;">
+                <div class="subjectList">
+                {% for subj in subjects %}    
+                    <div class="subjectBox">    
+                        <div class="subjectTitle">
+                            <span class="text">{{subj.name}}</span>
+                            <span class="toggle" onclick="clickToggleEvent(this);
+                                loadToDoEvent(this) " >🔽</span>
+                            <button class="deleteButton" onclick="deleteSubjectEvent('{{subj.name}}','{{subj.hostName}}')"></button>
+                        </div>
+                        <div class="details">
+                            <form action="" class="formToDo" onsubmit="submitToDoForm(event)">
+                                <input type="text" class="toDoContent" placeholder="Add Todo">
+                            </form>
+                            <button class="toDoClearBtn" onclick="clearToDoEvent(this)">모두지우기</button>
+                            <ul class="toDoList"></ul>
+                        </div> 
+                    </div>
+                {% endfor %}
+                    <div class="subjectBox "> 
+                        <div class="subjectTitle subjectAddBox">
+                            <form action="/typeSelection/aloneStudy/addSubject" method="post" class="addSubject">
+                                <input class="text" name="name" placeholder="과목명"></input>
+                                <button type="submit" class="subjectAddButton" >추가</button>
+                            </form>
+                        </div>
+                        <button class="importToDoBtn">가져오기</button>
+                        <span class="tooltip_importToDo">개인 ToDo 목록에서 가져옵니다.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="liveListBox">
+                <div class="MemberPart" id="groupMember1">
+                    <div class="streamingScreen"></div>
+                    <div class="memberName">사장님</div>
+                    <div class="studyingTime">02:33:24</div>
+                </div>
+                    <div class="MemberPart" id="groupMember2">
+                    <div class="streamingScreen"></div>
+                    <div class="memberName">누군가</div>
+                    <div class="studyingTime">02:33:24</div>
+                </div>
+                    <div class="MemberPart" id="groupMember3">
+                    <div class="streamingScreen"></div>
+                    <div class="memberName">아무나</div>
+                    <div class="studyingTime">02:33:24</div>
+                </div>
+                    <div class="MemberPart" id="groupMember4">
+                    <div class="streamingScreen"></div>
+                    <div class="memberName">사용자</div>
+                    <div class="studyingTime">02:33:24</div>
+                </div>
+                <div class="MemberPart" id="groupMember5">
+                    <div class="streamingScreen"></div>
+                    <div class="memberName">사용자</div>
+                    <div class="studyingTime">02:33:24</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="/toDo.js"></script>
+<script src="/statistics.js"></script>
+<script src="/studyMenu.js"></script>
+<script src="/groupStudy.js"></script>
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+</html>

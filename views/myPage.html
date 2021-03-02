@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My page</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" type="image/png" href="/imgs/book.png" />
+  </head>
+  <body class="mypage">
+    <!-- Navbar -->
+    <nav id="navbar">
+      <div class="navbarLogo">
+        <div class="goBack">
+          <a href="/typeSelection">
+            <!-- ⇦ -->
+            <img src="/imgs/goback.png" class="goBack btn" alt="뒤로가기버튼" />
+          </a>
+        </div>
+        <a href="/" class="navbarLogo">Focus on Study</a>
+      </div>
+      <div class="navbarMenu div">
+        <ul class="navbarMenu">
+          <a href="#" class="navbarMenuItem">aloneStudy</a>
+          <a href="auth_fos/logout" class="navbarMenuItem">Logout</a>
+        </ul>
+      </div>
+    </nav>
+    <div class="pageFrame mypage">
+      <div class="mypage--menu">
+        <ul>
+          <li><a href="myPage.html" class="on">Information</a></li>
+          <li><a href="account.html">Account</a></li>
+          <li><a href="group.html">Group</a></li>
+          <li><a href="invitation.html">Invitation</a></li>
+          <li><a href="#5">-</a></li>
+        </ul>
+      </div>
+      <div class="mypage--contents">
+        <span class="information--title">E-mail</span>
+        <div class="information--content">
+          <span class="e-mail">aaaaaa@naver.com</span>
+        </div>
+        <span class="information--title">ID</span>
+        <div class="information--content">
+          <span class="id">wwwwww</span>
+        </div>
+        <span class="information--title">PW</span>
+        <div class="information--content">
+          <button
+            class="changePwBtn"
+            onclick="toggleUpDown(document.querySelector('.changePw'), this)"
+          >
+            비밀번호 변경하기▼
+          </button>
+          <div class="changePw">
+            <form action="">
+              <span>현재 비밀번호</span>
+              <input type="password" required />
+              <span>새로운 비밀번호</span>
+              <input type="password" required />
+              <span>새로운 비밀번호 확인</span>
+              <input type="password" required />
+              <button
+                onclick="eraseInput(document.querySelector('.changePw form'))"
+              >
+                초기화
+              </button>
+              <button onclick="submitPw()">제출</button>
+            </form>
+          </div>
+        </div>
+        <span class="information--title">Nickname</span>
+        <div class="information--content">
+          <span class="nickname">iwiwi</span>
+          <button
+            class="changeNnBtn"
+            onclick="toggleUpDown(document.querySelector('.changeNn'), this)"
+            style="display: block; margin-top: 10px"
+          >
+            별명 변경하기▼
+          </button>
+          <div class="changeNn">
+            <form action="">
+              <span>새로운 별명</span>
+              <input type="text" required />
+              <button
+                onclick="eraseInput(document.querySelector('.changeNn form'))"
+              >
+                초기화
+              </button>
+              <button onclick="submitNn()">제출</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/changeInformation.js"></script>
+  </body>
+</html>

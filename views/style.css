@@ -1,0 +1,834 @@
+*:not(html) {
+  padding: 10px;
+}
+
+/* Navbar */
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+body:not(.popup) {
+  padding: 0;
+  margin: 0;
+  background-image: url('/public/imgs/background1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+}
+
+body.popup {
+  background-image: url('/public/imgs/background-weak-grid.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: x-large;
+}
+
+input {
+  background-color: transparent;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+span {
+  cursor: default;
+}
+
+/* Navbar */
+
+#navbar {
+  display: flex;
+  position: sticky;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0;
+  padding: 10px;
+  background-image: url('/public/imgs/cloud_main1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* margin-bottom: 50px; */
+}
+
+.navbarLogo {
+  padding-top: 0px;
+  padding-bottom: 10px;
+}
+
+.navbarLogo:hover {
+  text-underline-position: under;
+  text-shadow: 2px 2px 2px gray;
+}
+
+.navbarMenu {
+  display: flex;
+  color: white;
+  font-weight: 600;
+}
+
+.navbarMenu.div {
+  position: relative;
+}
+
+.navbarMenuItem {
+  padding: 4px 6px;
+  margin: 0 8px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.goBack {
+  padding: 0px 0px;
+  display: inline;
+  list-style: none;
+  border-radius: 4px;
+  font-size: x-large;
+  cursor: pointer;
+}
+.goBack .btn {
+  margin-top: 20px;
+  padding-right: 15px;
+  width: 40px;
+  height: 25px;
+}
+
+/* #1dd1a1 */
+/* #10ac84 */
+.navbarMenuItem:hover {
+  border-radius: 20%;
+  transition: all 250ms linear;
+  color: #b4ffe2;
+  text-decoration: underline solid 3px #b4ffe2;
+  text-underline-position: under;
+}
+
+/* pageFrame */
+
+.pageFrame.typeSelect {
+  width: 900px;
+  height: 700px;
+  padding: 0;
+  margin: auto;
+  display: flex;
+  flex-flow: row;
+  border-radius: 20px;
+}
+
+.pageFrame.Study {
+  width: 900px;
+  height: 700px;
+  padding: 0;
+  margin: auto;
+  display: flex;
+  flex-flow: row;
+  /* border: 1px solid black; */
+  border-radius: 20px;
+  margin-top: 50px;
+}
+
+/* main.html */
+
+.logInBox {
+  width: 450px;
+  height: 700px;
+  margin: 0;
+  padding: 0;
+  border-right: 1px dotted black;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logInOrSignUp {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0;
+}
+
+.logInOrSignUp span {
+  font-size: xx-large;
+  font-family: cursive;
+}
+
+.signUpButton {
+  color: gray;
+  text-decoration: underline solid gray;
+  padding-top: 0;
+  margin: auto;
+}
+
+.logInBox .logInButton {
+  background-image: url('/public/imgs/login11.png');
+  background-position: center;
+  margin: auto;
+  width: 115px;
+  height: 50px;
+  margin-right: 50px;
+  margin-top: 10px;
+}
+
+.logInBox .logInButton:hover {
+  background-image: url('/public/imgs/login22.png');
+  background-position: center;
+  width: 115px;
+  height: 50px;
+}
+
+.logInBox .loginText {
+  font-size: 30px;
+}
+
+.logInBox .logInForm {
+  display: flex;
+  flex-flow: column;
+}
+
+.logInBox label {
+  font-family: fantasy;
+  text-decoration: underline solid 3px #1dd1a1;
+}
+
+/* main.html > site InformationBox */
+
+.siteInformationBox {
+  width: 450px;
+  height: 700px;
+}
+
+.siteInformationBox .title {
+  font-size: 40px;
+  /* border-bottom: 1px double black; */
+  text-align: center;
+}
+
+.siteInformationBox .slideBox {
+  position: relative;
+  height: 300px;
+  /* border: 1px solid black; */
+  /* background-image: url('./images/slideImage1.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+
+.siteInformationBox .slideBox .slideImages {
+  padding: 0;
+}
+.siteInformationBox .slideBox .slideImages img {
+  position: absolute;
+  display: none;
+  width: 419.5px;
+  height: 300px;
+  padding: 0;
+}
+
+.siteInformationBox .slideBox .slideImages img.showing {
+  display: block;
+}
+
+.siteInformationBox .slideBox button {
+  font-size: 30px;
+  color: white;
+  width: 50px;
+  height: 100px;
+  position: absolute;
+  top: 35%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 9;
+}
+
+.siteInformationBox .slideBox button.next {
+  right: 10px;
+}
+
+.siteInformationBox .information p {
+  font-size: 20px;
+  display: none;
+}
+
+.siteInformationBox .information p.showing {
+  display: block;
+}
+
+/* signUp.html */
+
+.signUpFrame {
+  width: 300px;
+  height: 400px;
+  /* border: dotted black 1px; */
+  /* border-radius: 5px; */
+  text-align: center;
+  margin: auto;
+  margin-top: 100px;
+  /* background-color: white; */
+}
+
+.signUpFrame .signUpForm {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.signUpFrame img {
+  width: 250px;
+  height: 100px;
+}
+
+.signUpFrame a {
+  color: gray;
+  font-size: small;
+  text-decoration: underline solid gray;
+}
+
+.signUpFrame .signUpForm input {
+  padding: 0;
+  width: 130px;
+  height: 25px;
+  margin-left: 30px;
+  background-color: whitesmoke;
+}
+
+.signUpFrame .signUpForm label {
+  font-family: fantasy;
+  font-size: larger;
+  text-decoration: underline solid 3px rgb(255, 91, 119);
+}
+
+.signUpFrame .signUpForm button {
+  align-self: center;
+  margin-top: 12px;
+  background-image: url('/public/imgs/restbtn1.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  font-weight: bolder;
+}
+
+.signUpFrame .signUpForm button:hover {
+  padding: 10px 12px;
+  background-image: url('/public/imgs/restbtn2.png');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* typeSelection.html */
+
+.aloneBox,
+.groupBox {
+  width: 450px;
+  position: relative;
+  margin-top: 50px;
+}
+
+.aloneBox {
+  margin-top: 220px;
+  border-radius: 20px;
+  display: relative;
+}
+
+.groupBox .selectGroup {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30%;
+  /* margin-bottom: 150px; */
+}
+
+.pageFrame.typeSelect button {
+  width: 200px;
+  height: 40px;
+  font-size: 80px;
+  font-family: cursive;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  /* margin-top: 100px; */
+  transition: all 200ms linear;
+}
+
+.pointer_img {
+  /* position: absolute; */
+  background-image: url('/public/imgs/Bold-pointer.png');
+  background-size: cover;
+  display: flex;
+  margin: 0 0 0 300px;
+  width: 120px;
+  height: 100px;
+  transition: all 200ms ease-in;
+  /* opacity: 0; */
+}
+
+.aloneButton:hover,
+.groupButton:hover {
+  color: #1dd1a1;
+  text-shadow: 2px 2px 2px gray;
+  opacity: 1;
+  /* transform: translateY(0px); */
+}
+
+/* .pointer_img:hover {
+  opacity: 1;
+} */
+
+.aloneButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 600px;
+}
+
+.groupButton {
+  margin-top: 400px;
+}
+
+/* aloneStudy.html */
+
+.aloneToDoBox,
+.statisticsBox {
+  width: 450px;
+  padding: 0;
+  /* margin: auto; */
+  /* margin-top: 50px; */
+}
+
+.aloneToDoBox .subjectBox {
+  border-top: 1px solid lightgray;
+  border-left: 1px solid lightgray;
+  border-bottom: 2px solid #1dd1a1;
+  border-right: 2px solid #10ac84;
+  background-color: white;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.aloneToDoBox .subjectBox.hide {
+  display: none;
+}
+
+.aloneToDoBox .toDoTitle,
+.statisticsBox .statisticsTitle {
+  height: 70px;
+  /* background-color: beige; */
+  padding: 0;
+  margin: 0;
+  text-align: center;
+
+  border-radius: 20px 0 0 0;
+}
+
+.aloneToDoBox .toDoTitle img {
+  width: 150px;
+}
+
+.statisticsBox .statisticsTitle img {
+  width: 200px;
+}
+
+.aloneToDoBox .subjectTitle input {
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 5px;
+}
+
+.aloneToDoBox .subjectTitle button {
+  padding: 3px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.aloneToDoBox .subjectTitle .toggle {
+  cursor: pointer;
+}
+
+.aloneToDoBox .subjectTitle .deleteButton {
+  width: 17px;
+  height: 25px;
+  background-image: url('/public/imgs/bin1.png');
+  background-repeat: no-repeat;
+  background-position: cover;
+  float: right;
+}
+
+.aloneToDoBox .subjectTitle .deleteButton:hover {
+  background-image: url('/public/imgs/bin2.png');
+  background-repeat: no-repeat;
+  background-position: cover;
+}
+
+.aloneToDoBox .subjectBox .details {
+  display: none;
+  padding: 0;
+  margin: 0;
+}
+.aloneToDoBox .subjectBox .details.open {
+  display: block;
+}
+
+.aloneToDoBox .subjectBox .details .formToDo {
+  display: inline-block;
+}
+
+.aloneToDoBox .subjectBox .details .toDoContent {
+  border: none;
+  border-bottom: 1px black solid;
+  padding: 5px;
+  margin-left: 15px;
+}
+
+.aloneToDoBox .subjectBox .details .toDoClearBtn {
+  border: 1px solid black;
+  margin-left: 70px;
+}
+
+.aloneToDoBox .subjectBox .details ul {
+  list-style: none;
+  margin: 5px;
+  padding: 0;
+}
+.aloneToDoBox .subjectBox .details ul li {
+  padding: 5px;
+  margin-left: 15px;
+}
+
+.aloneToDoBox .subjectBox .details ul li span.checked {
+  text-decoration: line-through;
+}
+
+.aloneToDoBox .subjectBox .details button {
+  padding: 3px;
+  background-color: transparent;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.aloneToDoBox .subjectBox .details .toDoAddButton {
+  font-size: 20px;
+  margin-left: 50px;
+}
+.aloneToDoBox .subjectAddButton {
+  font-size: 30px;
+  line-height: 30px;
+  background-color: transparent;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* aloneStudy.html > statistics */
+
+.statisticsBox .statisticsTitle {
+  border-radius: 0 20px 0 0;
+}
+
+.statisticsBox .inputDate {
+  display: inline-block;
+  text-align: center;
+  margin-left: 30%;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.statisticsBox .typeSelect {
+  display: flex;
+  justify-content: space-around;
+}
+
+.statisticsBox .main {
+  /* width: 430px; */
+  margin-right: 20px;
+  margin-top: 50px;
+}
+
+.statisticsBox .main .text {
+  text-align: center;
+  font-size: 20px;
+}
+/* popup_studying.html */
+
+.studyingPopupFrame {
+  width: 300px;
+  height: 450px;
+  border: solid black 1px;
+  padding: 0;
+}
+
+.studyingPopupFrame .timeBox {
+  border-bottom: 1px solid black;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  height: 170px;
+}
+
+.studyingPopupFrame .timeBox .subjectName {
+  font-size: 30px;
+  text-align: center;
+}
+.studyingPopupFrame .timeBox .subjectTime {
+  font-size: 30px;
+  text-align: center;
+}
+.studyingPopupFrame .timeBox .todayStudyTime {
+  position: absolute;
+  left: 10px;
+}
+
+.studyingPopupFrame .timeBox .todayRestTime {
+  position: absolute;
+  right: 10px;
+}
+.studyingPopupFrame .restOrExit {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  border-bottom: 1px solid black;
+}
+
+.studyingPopupFrame .restOrExit .rest,
+.studyingPopupFrame .restOrExit .exit {
+  background-image: url('/public/imgs/restbtn1.png');
+  font-size: small;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.studyingPopupFrame .restOrExit .rest:hover {
+  background-image: url('/public/imgs/restbtn2.png');
+  font-weight: bolder;
+}
+
+.studyingPopupFrame .restOrExit .exit:hover {
+  background-image: url('/public/imgs/exitbtn1.png');
+  opacity: 0.9;
+  font-weight: bolder;
+}
+
+.studyingPopupFrame ul.toDoList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* setRestTime.html */
+
+.setRestTimeFrame {
+  width: 200px;
+  height: 100px;
+  border: solid 1px black;
+  margin: auto;
+}
+
+.setRestTimeFrame form {
+  text-align: center;
+}
+
+.setRestTimeFrame input {
+  padding: 0;
+  width: 50px;
+  height: 25px;
+  vertical-align: middle;
+  margin: 0 0 0 10px;
+  text-align: right;
+}
+.setRestTimeFrame button {
+  background-image: url('/public/imgs/restbtn1.png');
+  display: block;
+  margin: 20px auto 5px auto;
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0;
+}
+
+/* popup_resting.html */
+
+.popupRestingFrame {
+  padding: 0;
+  margin: auto;
+  height: 140px;
+  width: 260px;
+  border: solid 1px black;
+}
+.popupRestingFrame span.title {
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.popupRestingFrame p {
+  padding: 0;
+  text-align: center;
+}
+
+.popupRestingFrame button {
+  display: block;
+  margin: 20px auto 10px auto;
+  width: 70px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0;
+}
+
+/* groupStudy.html */
+
+.groupToDoBox,
+.liveListBox {
+  width: 450px;
+  padding: 0;
+  margin: 0;
+}
+
+.groupToDoBox {
+  /* border-right: black dotted 1px; */
+}
+
+.groupToDoBox .toDoTitle,
+.liveListBox .title {
+  height: 70px;
+  /* background-color: beige; */
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 40px;
+  font-family: cursive;
+  line-height: 70px;
+}
+
+.groupToDoBox .toDoTitle img {
+  width: 150px;
+}
+
+.liveListBox .title img {
+  width: 250px;
+}
+
+.liveListBox .title {
+  border-radius: 0 20px 0 0;
+}
+
+.groupToDoBox .subjectTitle button {
+  padding: 3px;
+  /* background-color: bisque; */
+  /* border: solid beige 1px; */
+  /* border-radius: 15px; */
+  cursor: pointer;
+}
+
+.groupToDoBox .subjectTitle .deleteButton {
+  float: right;
+  width: 17px;
+  height: 25px;
+  background-image: url('/public/imgs/bin1.png');
+  background-repeat: no-repeat;
+  background-position: cover;
+}
+
+.groupToDoBox .subjectTitle .deleteButton:hover {
+  background-image: url('/public/imgs/bin2.png');
+  background-repeat: no-repeat;
+  background-position: cover;
+}
+
+.groupToDoBox .subjectBox {
+  border: 1px solid black;
+  margin: 10px;
+  border-radius: 20px;
+}
+
+.groupToDoBox .subjectBox .details {
+  padding: 0;
+  margin: 0;
+}
+
+.groupToDoBox .subjectBox .details ul {
+  list-style: none;
+  margin: 5px;
+  padding: 0;
+}
+.groupToDoBox .subjectBox .details button {
+  padding: 3px;
+  width: 17px;
+  height: 25px;
+  background-image: url('/public/imgs/bin1.png');
+  background-repeat: no-repeat;
+  background-position: cover;
+  /* background-color: bisque; */
+  border: none;
+  /* border-radius: 15px; */
+  cursor: pointer;
+}
+
+.groupToDoBox .subjectBox .details button:hover {
+  background-image: url('/public/imgs/bin2.png');
+  background-repeat: no-repeat;
+  background-position: cover;
+}
+
+.groupToDoBox .subjectAddButton {
+  font-size: 30px;
+  line-height: 30px;
+  background-color: goldenrod;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.liveListBox {
+  text-align: center;
+}
+.liveListBox span.studyingCount {
+  color: red;
+}
+
+.liveListBox .MemberPart {
+  width: 170px;
+  height: 130px;
+  border: 1px solid black;
+  margin: 10px 10px;
+  text-align: center;
+  display: inline-block;
+}
+
+.liveListBox .streamingScreen {
+  width: 160px;
+  height: 90px;
+  border: 1px solid blue;
+  padding: 0;
+  margin: auto;
+}
+
+.liveListBox .memberName,
+.liveListBox .studyingTime {
+  display: inline-block;
+  margin: auto;
+}
+
+/* liveStreaming.html */
+
+.liveStreamingScreen {
+  border: 1px solid black;
+  width: 600px;
+  height: 400px;
+}
+
+/* popup_studying.html */

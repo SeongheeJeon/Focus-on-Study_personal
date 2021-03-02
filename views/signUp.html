@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/png" href="/imgs/book.png" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="navbarLogo">
+      <a href="/" class="navbarLogo">Focus on Study</a>
+    </div>
+    <div class="navbarMenu div">
+    </div>
+  </nav>
+    <div class="signUpFrame">
+        <img src="/imgs/signup.png" alt="회원가입제목" class="signupimg">
+        <form action="/auth_fos/signUp" method="post" class="signUpForm">
+            <label>E-mail: <input type="email" id="join_email" name="email" required autofocus></label> 
+            <label>ID: <input type="text" id="join_id" name="localId" required></label>
+            <label>Nickname: <input type="text" id="join_nick" name="nick" required></label>  
+            <label>PW: <input type="password" id="join_password" name="password" required></label> 
+            <label>PW again: <input type="password" id="join_passwordAgain" name="passwordAgain" required></label> 
+            <button type="submit">가입</button>
+        </form>
+        <a href="/">메인으로 돌아가기</a>
+    </div>
+</body>
+<script>
+    window.onload = () => {
+      if (new URL(location.href).searchParams.get('error') === 'exist') {
+        alert('이미 존재하는 아이디입니다.');
+      }
+      else if (new URL(location.href).searchParams.get('error') === 'notMatch') {
+        alert('비밀번호가 일치하지 않습니다.');
+      }
+    };
+  </script>
+</html>

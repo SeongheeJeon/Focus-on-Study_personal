@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Group</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body class="popup" style="height: 523px">
+    <h1 style="text-align: center; margin: 0">그룹 검색</h1>
+    <p
+      style="
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        color: rgb(104, 104, 247);
+      "
+    >
+      공개 그룹만 검색 가능합니다.
+    </p>
+    <form action="" class="findGroupForm">
+      <input type="text" name="keyword" placeholder="키워드를 입력하세요" />
+      <button type="submit">검색</button>
+    </form>
+    <div class="findedGroupList" onclick="findedGroupClickEvent(this)">
+      <div class="groupBox">
+        <h5 class="category">스터디</h5>
+        <h3 class="name">웹개발-프론트엔드 스터디</h3>
+        <p><span>인원</span>3/5명<span>그룹장</span>seonghee</p>
+        <p class="introduction">HTML, CSS, JavaScript 공부하실분</p>
+      </div>
+    </div>
+  </body>
+  <script src="/findGroup.js"></script>
+</html>

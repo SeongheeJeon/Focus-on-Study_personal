@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Group</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body class="popup" style="height: 523px">
+    <h1 style="text-align: center; margin: 0">그룹 생성</h1>
+    <form action="" class="createGroupForm">
+      <label class="heading"
+        >그룹명 : <input type="text" name="groupName"
+      /></label>
+      <label class="heading"
+        >카테고리 :
+        <select name="category">
+          <option value="">카테고리 선택</option>
+          <option value="study">스터디</option>
+          <option value="suneung">수능</option>
+          <option value="employment">취업</option>
+          <option value="peet">PEET</option>
+          <option value="official">공무원</option>
+          <option value="languageStudy">어학</option>
+          <option value="certificate">자격증</option>
+          <option value="etc">기타</option>
+        </select></label
+      >
+
+      <div>
+        <label
+          ><input
+            type="radio"
+            name="isOpen"
+            value="open"
+            onclick="hidePWInput()"
+          />
+          공개</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="isOpen"
+            value="private"
+            onclick="showPWInput()"
+          />
+          비공개</label
+        >
+      </div>
+      <label id="groupPW" style="display: none"
+        >PW: <input type="text" name="groupPW"
+      /></label>
+      <div style="padding: 0 0 10px 0">
+        <h3 style="margin: 0">인원제한</h3>
+        <label
+          ><input
+            type="radio"
+            name="isMemberLimit"
+            value="no"
+            onclick="hideNumberSelect()"
+          />
+          없음</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="isMemberLimit"
+            value="yes"
+            onclick="showNumberSelect()"
+          />
+          있음</label
+        >
+        <select name="numberOfMember" id="numberSelect" style="display: none">
+          <option value="2">2명</option>
+          <option value="3">3명</option>
+          <option value="4">4명</option>
+          <option value="5">5명</option>
+          <option value="6">6명</option>
+          <option value="7">7명</option>
+          <option value="8">8명</option>
+          <option value="9">9명</option>
+          <option value="10">10명</option>
+        </select>
+      </div>
+      <label class="heading"
+        >그룹소개
+        <textarea
+          name="introduction"
+          cols="35"
+          rows="3"
+          style="margin: 5px 0"
+        ></textarea>
+      </label>
+      <button type="submit">생성</button>
+    </form>
+  </body>
+
+  <script>
+    const PWElement = document.querySelector('.createGroupForm #groupPW');
+    const numberElement = document.querySelector(
+      '.createGroupForm #numberSelect',
+    );
+
+    function showPWInput() {
+      PWElement.style.display = 'block';
+    }
+
+    function hidePWInput() {
+      PWElement.style.display = 'none';
+    }
+
+    function showNumberSelect() {
+      numberElement.style.display = 'inline';
+    }
+
+    function hideNumberSelect() {
+      numberElement.style.display = 'none';
+    }
+  </script>
+</html>

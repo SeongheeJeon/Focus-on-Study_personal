@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Group Page</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" type="image/png" href="/imgs/book.png" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav id="navbar">
+      <div class="navbarLogo">
+        <div class="goBack">
+          <a href="/typeSelection">
+            <!-- ⇦ -->
+            <img src="/imgs/goback.png" class="goBack btn" alt="뒤로가기버튼" />
+          </a>
+        </div>
+        <a href="#" class="navbarLogo">Focus on Study</a>
+      </div>
+      <div class="navbarMenu div">
+        <ul class="navbarMenu">
+          <li class="navbarMenuItem">Logout</li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="pageFrame Study">
+      <div class="groupToDoBox">
+        <div class="toDoTitle">
+          <img src="/imgs/todo.png" alt="" />
+        </div>
+        <div class="subjectBox">
+          <div class="subjectTitle">
+            <span class="text">과목명 1</span>
+            <span class="toggle">🔽</span>
+            <button
+              class="startButton"
+              onclick="location.href='/liveStreaming'"
+            >
+              ▶
+            </button>
+            <button class="deleteButton"></button>
+          </div>
+          <div class="details">
+            <ul class="toDoList">
+              <li>
+                <input type="checkbox" /> 세부사항1
+                <button class="deleteButton"></button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <button class="subjectAddButton">+</button>
+      </div>
+      <div class="liveListBox">
+        <div class="title">
+          <img src="/imgs/livelist.png" alt="" />
+        </div>
+        <p>
+          공부중 : <span class="studyingCount">2</span>/
+          <span class="groupCount">4</span>
+        </p>
+        <div class="MemberPart" id="groupMember1">
+          <div class="streamingScreen"></div>
+          <div class="memberName">사장님</div>
+          <div class="studyingTime">02:33:24</div>
+        </div>
+        <div class="MemberPart" id="groupMember2">
+          <div class="streamingScreen"></div>
+          <div class="memberName">누군가</div>
+          <div class="studyingTime">02:33:24</div>
+        </div>
+        <div class="MemberPart" id="groupMember3">
+          <div class="streamingScreen"></div>
+          <div class="memberName">아무나</div>
+          <div class="studyingTime">02:33:24</div>
+        </div>
+        <div class="MemberPart" id="groupMember4">
+          <div class="streamingScreen"></div>
+          <div class="memberName">사용자</div>
+          <div class="studyingTime">02:33:24</div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script></script>
+</html>

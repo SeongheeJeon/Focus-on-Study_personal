@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resting</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" type="image/png" href="/imgs/book.png" />
+  </head>
+  <body class="popup">
+    <div class="popupRestingFrame">
+      <img src="/imgs/resting.png" alt="휴식중title" class="title">
+      <p>
+        <span class="timeRemaining"></span>남았습니다.
+      </p>  
+      <button onclick="location.href='/typeSelection/aloneStudy/re_studying/?dayID={{dayID}}';
+        window.resizeTo(370,570)"; clearInterval(restInterval);">끝내기</button>
+    </div>
+
+    <input type="hidden" id="Ominute" value="{{minute}}" />
+    <input type="hidden" id="Osecond" value="{{second}}" />
+
+  </body>
+
+  <script>
+    //남은시간 표기 요소
+    const timeRemamining = document.querySelector('.timeRemaining');
+
+    let minute = document.getElementById('Ominute').value,
+      second = document.getElementById('Osecond').value;
+
+    minute = (minute == "") ? 0 : parseInt(minute);
+    second = (second == "") ? 0 : parseInt(second);
+
+
+    let totalSecond = minute*60 + second;
+
+    //초를 MM:SS형태로 변환
+    function sec_To_MMSS(sec) {
+      const min = Math.floor((sec % 3600) / 60);
+      const rest = (sec % 3600) % 60;
+      const result =
+        `${min >= 10 ? min : `0${min}`} 분 ` +
+        `${rest >= 10 ? rest : `0${rest}`} 초`;
+
+      return result;
+    }
+
+    function timer() {
+      totalSecond--;
+
+      timeRemamining.innerHTML = sec_To_MMSS(totalSecond);
+    }
+
+    function init() {
+      timeRemamining.innerHTML = sec_To_MMSS(totalSecond);
+      const restInterval = setInterval(timer, 1000);
+    }
+
+    init();
+  </script>
+</html>

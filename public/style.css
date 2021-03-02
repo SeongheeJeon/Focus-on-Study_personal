@@ -1,0 +1,1067 @@
+*:not(html) {
+  padding: 10px;
+}
+
+/* Navbar */
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+body:not(.popup) {
+  padding: 0;
+  margin: 0;
+  background-image: url('imgs/background1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+}
+
+body.popup {
+  background-image: url('imgs/background-weak-grid.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: x-large;
+}
+
+input {
+  background-color: transparent;
+  outline: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+span {
+  cursor: default;
+}
+
+@media screen and (min-width: 768px) {
+  body:not(.popup) {
+    background-position-y: 90%;
+  }
+}
+
+/* Navbar */
+
+#navbar {
+  display: flex;
+  position: sticky;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0;
+  padding: 10px;
+  background-image: url('imgs/cloud_main1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* margin-bottom: 50px; */
+}
+
+.navbarLogo {
+  padding-top: 0px;
+  padding-bottom: 10px;
+}
+
+.navbarLogo:hover {
+  text-underline-position: under;
+  text-shadow: 2px 2px 2px gray;
+}
+
+.navbarMenu {
+  display: flex;
+  color: white;
+  font-weight: 600;
+}
+
+.navbarMenu.div {
+  position: relative;
+}
+
+.navbarMenuItem {
+  padding: 4px 6px;
+  margin: 0 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 17px;
+}
+
+.goBack {
+  padding: 0px 0px;
+  display: inline;
+  list-style: none;
+  border-radius: 4px;
+  font-size: x-large;
+  cursor: pointer;
+}
+.goBack .btn {
+  margin-top: 20px;
+  padding-right: 15px;
+  width: 40px;
+  height: 25px;
+}
+
+/* #1dd1a1 */
+/* #10ac84 */
+.navbarMenuItem:hover {
+  border-radius: 20%;
+  transition: all 250ms linear;
+  color: #b4ffe2;
+  text-decoration: underline solid 3px #b4ffe2;
+  text-underline-position: under;
+}
+
+/* pageFrame */
+
+.pageFrame.typeSelect {
+  width: 900px;
+  height: 85vh;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row;
+  border-radius: 20px;
+}
+
+.pageFrame.Login {
+  width: 900px;
+  height: 80vh;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row;
+}
+
+.pageFrame.Study {
+  width: 70%;
+  height: 80vh;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.pageFrame.mypage {
+  display: flex;
+  width: 1000px;
+  height: 80vh;
+  padding: 0;
+  margin: 20px auto;
+  border: 1px solid rgb(172, 172, 172);
+  box-shadow: 3px 3px 5px rgb(143, 143, 143);
+  border-radius: 15px;
+}
+
+/* main.html */
+
+.logInBox {
+  width: 450px;
+  height: 85vh;
+  margin: 0;
+  padding: 0;
+  border-right: 1px dotted lightgray;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logInOrSignUp {
+  display: flex;
+  flex-direction: column;
+}
+
+.logInOrSignUp span {
+  font-size: 50px;
+  font-family: cursive;
+}
+
+.signUpButton {
+  color: gray;
+  border-bottom: 1px solid gray;
+  padding: 1px;
+  margin: auto;
+}
+
+.logInBox .logInButton {
+  background-image: url('imgs/login11.png');
+  background-position: center;
+  margin: auto;
+  width: 115px;
+  height: 50px;
+  margin-right: 50px;
+  margin-top: 10px;
+}
+
+.logInBox .logInButton:hover {
+  background-image: url('imgs/login22.png');
+  background-position: center;
+  width: 115px;
+  height: 50px;
+}
+
+.logInBox .loginText {
+  font-size: 30px;
+}
+
+.logInBox .logInForm {
+  display: flex;
+  flex-flow: column;
+  padding: 40px 0;
+}
+
+.logInBox .logInForm input {
+  background-color: whitesmoke;
+}
+
+.logInBox label {
+  font-family: fantasy;
+  text-decoration: underline solid 3px #1dd1a1;
+}
+
+/* main.html > site InformationBox */
+
+.siteInformationBox {
+  width: 450px;
+  height: 85vh;
+}
+
+.siteInformationBox .title {
+  font-size: 40px;
+  /* border-bottom: 1px double black;
+     text-align: center; */
+}
+
+.siteInformationBox .imgTitle {
+  width: 300px;
+  height: 150px;
+  margin-left: 70px;
+}
+
+.siteInformationBox .slideBox {
+  position: relative;
+  margin: auto;
+  height: 300px;
+  border: 1px solid black;
+  padding: 0;
+}
+
+.siteInformationBox .slideBox .slideImages {
+  padding: 0;
+}
+.siteInformationBox .slideBox .slideImages img {
+  position: absolute;
+  display: none;
+  width: 437.5px;
+  height: 300px;
+  padding: 0;
+}
+
+.siteInformationBox .slideBox .slideImages img.showing {
+  display: block;
+}
+
+.siteInformationBox .slideBox button {
+  font-size: 35px;
+  font-weight: bolder;
+  color: black;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 40%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 9;
+}
+
+.siteInformationBox .slideBox button.next {
+  right: 10px;
+}
+
+.siteInformationBox .information p {
+  padding: 0;
+  font-size: 20px;
+  font-weight: bolder;
+  color: rgb(90, 90, 90);
+  display: none;
+  font-style: italic;
+}
+
+.siteInformationBox .information p.showing {
+  display: block;
+}
+
+/* signUp.html */
+
+.signUpFrame {
+  width: 300px;
+  height: 400px;
+  /* border: dotted black 1px; */
+  /* border-radius: 5px; */
+  text-align: center;
+  margin: auto;
+  margin-top: 100px;
+  /* background-color: white; */
+}
+
+.signUpFrame .signUpForm {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.signUpFrame img {
+  width: 250px;
+  height: 100px;
+}
+
+.signUpFrame a {
+  color: gray;
+  font-size: small;
+  text-decoration: underline solid gray;
+}
+
+.signUpFrame .signUpForm input {
+  padding: 0;
+  width: 130px;
+  height: 25px;
+  margin-left: 30px;
+  background-color: whitesmoke;
+}
+
+.signUpFrame .signUpForm label {
+  font-family: fantasy;
+  font-size: larger;
+  text-decoration: underline solid 3px rgb(255, 91, 119);
+}
+
+.signUpFrame .signUpForm button {
+  align-self: center;
+  margin-top: 12px;
+  background-image: url('imgs/restbtn1.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  font-weight: bolder;
+}
+
+.signUpFrame .signUpForm button:hover {
+  padding: 10px 12px;
+  background-image: url('imgs/restbtn2.png');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* typeSelection.html */
+
+.aloneBox,
+.groupBox {
+  width: 450px;
+  position: relative;
+}
+
+.aloneBox {
+  margin-top: 160px;
+  border-radius: 20px;
+  display: relative;
+}
+
+/* .groupBox.selectGroup {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 5px;
+  margin: auto;
+} */
+
+.pageFrame.typeSelect button {
+  width: 200px;
+  height: 40px;
+  font-size: 80px;
+  font-family: cursive;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  /* margin-top: 100px; */
+  transition: all 200ms linear;
+}
+
+.groupMenu button {
+  height: 31.8px;
+  font-size: 14px;
+  font-family: normal;
+  padding: 5px 10px;
+  margin-left: 10px;
+  vertical-align: middle;
+  border: 1px solid #1dd1a1;
+  border-radius: 3px;
+  background-color: white;
+  border-bottom: 4px solid #1dd1a1;
+}
+
+.groupMenu button:active {
+  background-color: whitesmoke;
+  border: 1px solid #ff369b;
+  border-bottom: 4px solid #ff369b;
+}
+.createGroupForm,
+.inviteMemberForm {
+  display: flex;
+  flex-flow: column;
+}
+.findGroupForm {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
+.createGroupForm label.heading,
+.inviteMemberForm label.heading {
+  font-size: 1.17em;
+  font-weight: bold;
+}
+
+.createGroupForm input,
+.inviteMemberForm input,
+.findGroupForm input {
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 5px;
+}
+
+.createGroupForm button,
+.inviteMemberForm button {
+  padding: 5px;
+  margin: 5px auto;
+  border: 1px solid black;
+  width: 50px;
+}
+
+.findGroupForm button {
+  padding: 5px;
+  margin: 5px 0 0 20px;
+  border: 1px solid black;
+  width: 50px;
+}
+
+.findedGroupList * {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.findedGroupList {
+  width: 80%;
+  margin: auto;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: rgba(5, 5, 7, 0.11) 0px 2px 3px, rgba(0, 0, 0, 0.08) 0px 1px 3px;
+}
+
+.findedGroupList:active {
+  transform: scale(0.95);
+}
+
+.findedGroupList .category {
+  color: #1dd1a1;
+}
+
+.findedGroupList p span {
+  font-size: 9px;
+  padding-right: 5px;
+  color: rgb(166, 167, 166);
+}
+
+.findedGroupList p span:last-child {
+  padding-left: 20px;
+}
+
+.findedGroupList .introduction {
+  border-top: 1px solid rgb(189, 201, 189);
+  margin-top: 10px;
+  padding-top: 5px;
+}
+
+.findedGroupList .groupBox {
+  width: auto;
+}
+
+.pointer_img {
+  /* position: absolute; */
+  background-image: url('imgs/Bold-pointer.png');
+  background-size: cover;
+  display: flex;
+  margin: 0 0 0 300px;
+  width: 120px;
+  height: 100px;
+  transition: all 200ms ease-in;
+  /* opacity: 0; */
+}
+
+.aloneButton:hover,
+.groupButton:hover {
+  color: #1dd1a1;
+  text-shadow: 2px 2px 2px gray;
+  opacity: 1;
+}
+
+.aloneButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 600px;
+}
+
+/* aloneStudy.html */
+
+.study-menu {
+  display: block;
+  margin: auto;
+  width: 900px;
+  padding: 0;
+}
+
+.study-menu ul {
+  display: flex;
+}
+
+.study-menu ul li {
+  cursor: pointer;
+  flex: 1;
+  height: 50px;
+  background-size: 160px 80px;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  transition: all 200ms ease-in;
+}
+
+.study-menu ul li.on {
+  position: relative;
+  transform: scale(1.1);
+}
+
+.study-menu ul li:hover {
+  transform: scale(1.1);
+}
+
+.study-menu ul li.on:after {
+  content: '✔';
+  position: absolute;
+  right: 40%;
+  top: -10%;
+  font-size: 60px;
+  color: red;
+}
+
+.groupMenu form {
+  display: inline;
+  padding: 0;
+}
+
+.selectGroup {
+  cursor: pointer;
+  padding: 5px;
+  margin: auto;
+  outline: none;
+  border: 1px solid #1dd1a1;
+  border-radius: 3px;
+  background-color: white;
+  border-bottom: 4px solid #1dd1a1;
+}
+
+.selectGroup:focus {
+  background-color: whitesmoke;
+  border: 1px solid #ff369b;
+  border-bottom: 4px solid #ff369b;
+}
+
+iframe[id='iframe1'] {
+  width: 0;
+  height: 0;
+  border: 0;
+  visibility: hidden;
+}
+
+.aloneToDoBox {
+  width: 500px;
+  margin: auto;
+}
+
+.statisticsBox {
+  width: 100%;
+  padding: 0;
+}
+
+.toDoBox .subjectBox {
+  border-top: 1px solid lightgray;
+  border-left: 1px solid lightgray;
+  border-bottom: 2px solid #1dd1a1;
+  border-right: 2px solid #10ac84;
+  background-color: white;
+  margin: 10px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.toDoBox .subjectBox.hide {
+  display: none;
+}
+
+.toDoBox .subjectTitle.subjectAddBox {
+  display: inline-block;
+}
+
+.toDoBox .subjectTitle input {
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 5px;
+}
+
+.toDoBox .subjectTitle button {
+  padding: 3px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.toDoBox .subjectTitle .toggle {
+  cursor: pointer;
+}
+
+.aloneToDoBox .subjectTitle .startButton {
+  width: 25px;
+  height: 25px;
+  background-image: url('imgs/startbtn.png');
+  background-repeat: no-repeat;
+  background-position: cover;
+}
+.aloneToDoBox .subjectTitle .startButton:active {
+  transform: scale(0.9);
+}
+
+.toDoBox .subjectTitle .deleteButton {
+  width: 17px;
+  height: 25px;
+  background-image: url('imgs/bin1.png');
+  background-repeat: no-repeat;
+  background-position: cover;
+  float: right;
+}
+
+.toDoBox .subjectTitle .deleteButton:hover {
+  background-image: url('imgs/bin2.png');
+  background-repeat: no-repeat;
+  background-position: cover;
+}
+
+.toDoBox .subjectBox .details {
+  display: none;
+  padding: 0;
+  margin: 0;
+}
+.toDoBox .subjectBox .details.open {
+  display: block;
+}
+
+.toDoBox .subjectBox .details .formToDo {
+  display: inline-block;
+}
+
+.toDoBox .subjectBox .details .toDoContent {
+  border: none;
+  border-bottom: 1px black solid;
+  padding: 5px;
+  margin-left: 15px;
+}
+
+.toDoBox .subjectBox .details .toDoClearBtn {
+  color: gray;
+  box-shadow: rgba(5, 5, 7, 0.11) 0px 2px 3px, rgba(0, 0, 0, 0.08) 0px 1px 3px;
+  border: solid 2px rgba(0, 0, 0, 0.2);
+}
+
+.toDoBox .subjectBox .details .toDoClearBtn:active {
+  transform: scale(0.9);
+}
+
+.toDoBox .subjectBox .details ul {
+  list-style: none;
+  margin: 5px;
+  padding: 0;
+}
+.toDoBox .subjectBox .details ul li {
+  padding: 5px;
+  margin-left: 15px;
+}
+
+.toDoBox .subjectBox .details ul li span.checked {
+  text-decoration: line-through;
+}
+
+.toDoBox .subjectBox button {
+  padding: 3px;
+  background-color: transparent;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.toDoBox form.addSubject {
+  display: inline-block;
+}
+
+.toDoBox button.subjectAddButton,
+.toDoBox button.importToDoBtn {
+  color: gray;
+  font-size: 13px;
+  line-height: 13px;
+  box-shadow: rgba(5, 5, 7, 0.11) 0px 2px 3px, rgba(0, 0, 0, 0.08) 0px 1px 3px;
+  border: solid 2px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.toDoBox button.importToDoBtn {
+  margin-left: 70px;
+}
+
+.toDoBox span.tooltip_importToDo {
+  display: none;
+  font-size: 13px;
+  padding: 3px 5px;
+  position: absolute;
+  background-color: #b4d6cd8e;
+  top: 60px;
+  right: 10px;
+  border-radius: 10px;
+}
+.importToDoBtn:hover + .tooltip_importToDo {
+  display: inline;
+}
+
+.toDoBox button.subjectAddButton:active,
+.toDoBox button.importToDoBtn:active {
+  transform: scale(0.9);
+}
+/* aloneStudy.html > statistics */
+
+.statisticsBox .statisticsTitle {
+  border-radius: 0 20px 0 0;
+}
+
+.statisticsBox .inputDate {
+  display: inline-block;
+  text-align: center;
+  margin-left: 30%;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.statisticsBox .typeSelect {
+  display: flex;
+  justify-content: space-around;
+}
+
+.statisticsBox .chart {
+  /* width: 430px; */
+  /* margin-right: 0px; */
+  margin-top: 50px;
+  display: none;
+}
+
+.statisticsBox .chart .text {
+  text-align: center;
+  font-size: 20px;
+}
+
+/* groupStudy */
+
+.groupStudy {
+  text-align: center;
+}
+
+.groupStudy .groupToDoBox {
+  display: inline-block;
+  vertical-align: top;
+  width: 45%;
+  text-align: left;
+}
+
+/* popup_studying.html */
+
+body.popup div {
+  cursor: default;
+}
+
+.studyingPopupFrame {
+  width: 300px;
+  height: 450px;
+  border: solid black 1px;
+  padding: 0;
+}
+
+.studyingPopupFrame .timeBox {
+  border-bottom: 1px solid black;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  height: 170px;
+}
+
+.studyingPopupFrame .timeBox .subjectName {
+  font-size: 30px;
+  text-align: center;
+}
+
+.studyingPopupFrame .timeBox .cssbrush {
+  margin: auto;
+  width: 200px;
+  height: 50px;
+  background-image: url('imgs/brush11.png');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.studyingPopupFrame .timeBox .subjectTime {
+  font-size: 30px;
+  text-align: center;
+}
+.studyingPopupFrame .timeBox .todayStudyTime {
+  position: absolute;
+  left: 10px;
+}
+
+.studyingPopupFrame .timeBox .todayRestTime {
+  position: absolute;
+  right: 10px;
+}
+.studyingPopupFrame .restOrExit {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  border-bottom: 1px solid black;
+}
+
+.studyingPopupFrame .restOrExit .rest,
+.studyingPopupFrame .restOrExit .exit {
+  background-image: url('imgs/restbtn1.png');
+  font-size: small;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.studyingPopupFrame .restOrExit .rest:hover {
+  background-image: url('imgs/restbtn2.png');
+  font-weight: bolder;
+}
+
+.studyingPopupFrame .restOrExit .exit:hover {
+  background-image: url('imgs/exitbtn1.png');
+  opacity: 0.9;
+  font-weight: bolder;
+}
+
+.studyingPopupFrame .toDoList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.studyingPopupFrame .toDoList span.checked {
+  text-decoration: line-through;
+}
+
+/* setRestTime.html */
+
+.setRestTimeFrame {
+  width: 200px;
+  height: 100px;
+  border: solid 1px black;
+  margin: auto;
+}
+
+.setRestTimeFrame form {
+  text-align: center;
+}
+
+.setRestTimeFrame input {
+  background-color: whitesmoke;
+  padding: 0;
+  width: 50px;
+  height: 25px;
+  vertical-align: middle;
+  margin: 0 0 0 10px;
+  text-align: right;
+}
+
+.setRestTimeFrame button {
+  background-image: url('imgs/restbtn1.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  margin: 20px auto 5px auto;
+  width: 60px;
+  height: 35px;
+  line-height: 30px;
+  padding: 0;
+}
+
+.setRestTimeFrame button:hover {
+  background-image: url('imgs/restbtn2.png');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* popup_resting.html */
+
+.popupRestingFrame {
+  padding: 5px;
+  margin: auto;
+  width: 260px;
+  height: 160px;
+  border-top: 1px solid lightgray;
+  border-left: 1px solid lightgray;
+  border-bottom: 2px solid gray;
+  border-right: 2px solid gray;
+}
+
+.popupRestingFrame img {
+  width: 100px;
+  height: 50px;
+  margin-left: 70px;
+}
+
+.popupRestingFrame span.title {
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.popupRestingFrame p {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.popupRestingFrame button {
+  background-image: url('imgs/restbtn1.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  margin: 20px auto 10px auto;
+  width: 60px;
+  height: 37px;
+  line-height: 30px;
+  padding: 0;
+}
+
+.popupRestingFrame button:hover {
+  background-image: url('imgs/exitbtn1.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  font-weight: bolder;
+}
+
+/* liveListBox  */
+
+.liveListBox {
+  display: inline-block;
+  text-align: center;
+  padding-left: 30px;
+  width: 45%;
+}
+
+.liveListBox span.studyingCount {
+  color: red;
+}
+
+.liveListBox .MemberPart {
+  background-color: white;
+  width: 130px;
+  height: 90px;
+  border: 1px solid lightgray;
+  margin: 10px 10px;
+  text-align: center;
+  display: inline-block;
+  box-shadow: 1px 1px 2px 1px #10ac84;
+  border-radius: 10px;
+}
+
+.liveListBox .streamingScreen {
+  width: 120px;
+  height: 50px;
+  padding: 0;
+  margin: auto;
+  box-shadow: 0 0 2px #10ac84;
+  border-radius: 10px;
+}
+
+.liveListBox .memberName,
+.liveListBox .studyingTime {
+  display: block;
+  padding: 0;
+  margin: auto;
+}
+
+/* myPage.html */
+
+.mypage--menu {
+  width: 300px;
+}
+
+.mypage--menu ul {
+  display: flex;
+  flex-flow: column;
+}
+
+.mypage--menu li {
+  padding: 0;
+  border-bottom: 2px solid rgb(77, 62, 62);
+  flex: 1;
+}
+
+.mypage--menu a {
+  color: black;
+  position: relative;
+  padding: 10;
+  display: block;
+  height: 32px;
+  line-height: 32px;
+}
+
+.mypage--menu a.on:before {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 56px;
+  background-color: orangered;
+  top: -2px;
+  left: -2px;
+}
+
+.mypage--menu a:hover {
+  background-color: rgb(204, 204, 204);
+}
+
+.mypage--contents {
+  width: 700px;
+}
+
+/* liveStreaming.html */
+
+.liveStreamingScreen {
+  border: 1px solid black;
+  width: 600px;
+  height: 400px;
+}
+
+/* popup_studying.html */

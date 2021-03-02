@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/png" href="/imgs/book.png" />
+</head>
+<body>  
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="navbarLogo">
+          <a href="#" class="navbarLogo">Focus on Study</a>
+        </div>
+        <div class="navbarMenu div">
+        </div>
+    </nav>
+    <div class="pageFrame Login">
+        <div class="logInBox">
+            <div class="logInOrSignUp">
+                <span>Login</span> 
+                <button type="button" id="signUp" onclick="location.href='/signUp'" class="signUpButton">회원가입</button>
+            </div>
+            <form id="login-form" action="/auth_fos/login" class="logInForm" method="post">
+                <label for="localId">&nbsp;ID:
+                    <input type="text" id="localId" name="localId" required autofocus></label>
+                <label for="password">PW: 
+                    <input type="password" id="password" name="password" required></label>
+                <button id="login" type="submit" class="logInButton"></button>
+            </form>
+        </div>
+        <div class="siteInformationBox">
+            <div class="title">
+                <img src="imgs/fos.png" alt="FoS" class="imgTitle">
+            </div>
+            <div class="slideBox">
+                <button class="prev">⬅</button>
+                <button class="next">➡</button>
+                <div class="slideImages">
+                    <img class="showing" src="images/typeSelection.png" >
+                    <img src="images/aloneStudy.png" >
+                    <img src="images/restmenu.png" >
+                </div>
+            </div>
+            <div class="information">
+                <p class="showing">혼자도, 여러명도<br> 함께 공부할 수 있습니다.</p>
+                <p>개인 To Do를 만들어 관리할 수 있고<br>과목별, 날짜별 통계를 확인할 수 있습니다.</p>
+                <p>공부시간을 눈으로 볼 수 있고,<br>휴식 시간도 설정할 수 있으며<br>남은 휴식 시간도 볼 수 있습니다.</p>
+            </div>
+        </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      window.onload = () => {
+        if (new URL(location.href).searchParams.get('loginError')) {
+          alert(new URL(location.href).searchParams.get('loginError'));
+        }
+      };
+    </script>
+    <!-- <script src="./logIn.js"></script> -->
+    <script src="InformationSlide.js"></script>
+</body>
+</html>

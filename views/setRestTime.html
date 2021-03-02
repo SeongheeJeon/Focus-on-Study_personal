@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Set Rest Time</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" type="image/png" href="/imgs/book.png" />
+  </head>
+  <body class="popup">
+    <div class="setRestTimeFrame">
+      <form
+        method="POST"
+        onsubmit="return checkForm()"
+        action="./popup_resting?dayID={{dayID}}"
+      >
+        <input type="text" name="min" id="min" autocomplete="off" /> 분
+        <input type="text" name="sec" id="sec" autocomplete="off" /> 초
+        <button class="submit" onclick="submitClickEvent(this)">설정</button>
+      </form>
+      <p class="message" style="text-align: center"></p>
+    </div>
+  </body>
+  <script>
+    function checkForm() {
+      let min = document.querySelector('#min').value,
+        sec = document.querySelector('#sec').value,
+        msg = document.querySelector('.message');
+
+      //분, 초 null 일 경우 false 반환.
+      if (min == '' && sec == '') {
+        msg.innerHTML = '값을 입력해주세요.';
+        return false;
+      }
+
+      //null 일 경우 0으로, 숫자가 아닌 값이 입력되었을 경우 NaN으로 변환됨.
+      min = min == '' ? 0 : parseFloat(min);
+      sec = sec == '' ? 0 : parseFloat(sec);
+
+      //정수가 아닐경우 false 반환.
+      if (!Number.isInteger(min) || !Number.isInteger(sec)) {
+        msg.innerHTML = '정수만 입력해주세요.';
+        return false;
+      }
+
+      //값이 음수일 경우 false 반환.
+      if (min < 0 || sec < 0) {
+        msg.innerHTML = '음수는 안됩니다.';
+        return false;
+      }
+    }
+  </script>
+</html>
